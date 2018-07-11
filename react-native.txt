@@ -1,0 +1,47 @@
+# create app
+react-native init AwesomeProject
+
+# open dev menu
+adb shell input keyevent KEYCODE_MENU
+adb shell input keyevent KEYCODE_MENU && adb shell input keyevent ENTER && adb shell input keyevent ENTER
+lsusb
+echo SUBSYSTEM=="usb", ATTR{idVendor}=="1782", MODE="0666", GROUP="plugdev" | sudo tee /etc/udev/rules.d/51-android-usb.rules
+
+# app signing
+===============================================
+/android/.gradle.properties
+MYAPP_RELEASE_STORE_FILE=my-realease-key.keystore
+MYAPP_RELEASE_KEY_ALIAS=my-key-alias
+MYAPP_RELEASE_STORE_PASSWORD=123456
+MYAPP_RELEASE_KEY_PASSWORD=123456
+
+===============================================
+/android/app/src/bundle.gradle
+signingConfigs {
+        release {
+            if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
+                storeFile file(MYAPP_RELEASE_STORE_FILE)
+                storePassword MYAPP_RELEASE_STORE_PASSWORD
+                keyAlias MYAPP_RELEASE_KEY_ALIAS
+                keyPassword MYAPP_RELEASE_KEY_PASSWORD
+            }
+        }
+    }
+buildTypes {
+        release {
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
+        }
+    }
+
+==================================================
+./gradlew assembleRelease
+
+ react-native run-android --variant=release
+
+==================================================
+#building app
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/build/outputs/apk/app21.apk --assets-dest android/app/src/main/assets/
+
+

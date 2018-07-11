@@ -1,0 +1,13 @@
+Console
+Prefix 	Method
+clg→ 	console.log(object)
+cas→ 	console.assert(expression,object)
+ccl→ 	console.clear()
+cco→ 	console.count(label)
+cdi→ 	console.dir
+cer→ 	console.error(object)
+cgr→ 	console.group(label)
+cge→ 	console.groupEnd()
+ctr→ 	console.trace(object)
+cwa→ 	console.warn
+cin→ 	console.info

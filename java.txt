@@ -1,0 +1,24 @@
+# installation
+sudo apt-add-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+sudo update-alternatives --config java
+
+sudo update-alternatives --query java
+
+sudo update-alternatives --query javac
+# removing
+
+
+    Remove the link:
+
+    sudo update-alternatives --remove "java" "/usr/lib/jvm/jdk[version]/bin/java"    
+    sudo update-alternatives --remove "javac" "/usr/lib/jvm/jdk[version]/bin/javac"    
+    sudo update-alternatives --remove "javaws" "/usr/lib/jvm/jdk[version]/bin/javaws"
+
+    Then, remove the package in the /usr/lib/jvm:
+
+    sudo rm -r /usr/lib/jvm/jdk[version]
+
+

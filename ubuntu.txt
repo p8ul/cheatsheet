@@ -1,0 +1,13 @@
+sudo apt-get --purge remove octave3.2
+
+# open folder in terminal
+nautilus /dir/
+
+# disapble firewall
+sudo service ufw stop
+
+sudo apt-get autoclean to clean up partial pakages
+
+sudo apt-get autoremove to clean up apt cache
+
+sudo apt-get clean to remove any unused dependencies

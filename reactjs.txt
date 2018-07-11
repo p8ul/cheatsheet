@@ -1,0 +1,85 @@
+#Validating Props
+import PropTypes from 'prop-types';
+App.propTypes = {
+   name: PropTypes.string,
+   propArray: PropTypes.array.isRequired,
+   propBool: PropTypes.bool.isRequired,
+   propFunc: PropTypes.func,
+   propNumber: PropTypes.number,
+   propString: PropTypes.string,
+   optionalArray: PropTypes.array,
+  optionalBool: PropTypes.bool,
+  optionalFunc: PropTypes.func,
+  optionalNumber: PropTypes.number,
+  optionalObject: PropTypes.object,
+  optionalString: PropTypes.string,
+  optionalSymbol: PropTypes.symbol,
+
+  // Anything that can be rendered: numbers, strings, elements or an array
+  // (or fragment) containing these types.
+  optionalNode: PropTypes.node,
+
+  // A React element.
+  optionalElement: PropTypes.element,
+
+  // You can also declare that a prop is an instance of a class. This uses
+  // JS's instanceof operator.
+  optionalMessage: PropTypes.instanceOf(Message),
+
+  // You can ensure that your prop is limited to specific values by treating
+  // it as an enum.
+  optionalEnum: PropTypes.oneOf(['News', 'Photos']),
+
+  // An object that could be one of many types
+  optionalUnion: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.instanceOf(Message)
+  ]),	
+};
+
+
+# redux component
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { fetchItems } from '../actions/action-items';
+
+class Comp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      
+    };
+  }
+  componentWillMount() {
+    this.props.fetchItems();
+  }
+  render() {
+    return (
+      <div>
+       
+      </div>
+    );
+  }
+}
+
+ItemSearch.propTypes = {
+  fetchItems: PropTypes.func,
+  items: PropTypes.array.isRequired
+};
+
+function mapStateToProps(state) {
+  return {
+    items: state.items
+  };
+}
+
+function matchDispatchToProps(dispatch) {
+  return bindActionCreators({
+    fetchItems: fetchItems
+  }, dispatch);
+}
+export default connect(mapStateToProps, matchDispatchToProps)(Comp);
+

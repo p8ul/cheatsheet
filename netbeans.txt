@@ -1,0 +1,2 @@
+netbeans --jdkhome /usr/local/share/java/jdk1.6.0_07/
+

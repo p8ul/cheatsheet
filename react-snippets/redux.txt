@@ -1,0 +1,6 @@
+Redux
+Prefix 	Method
+rxaction→ 	redux action template
+rxconst→ 	export const $1 = '$1'
+rxreducer→ 	redux reducer template
+rxselect→ 	redux selector template

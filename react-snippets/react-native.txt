@@ -1,0 +1,3 @@
+React Native
+Prefix 	Method
+imrn→ 	import { $1 } from 'react-native'

@@ -1,0 +1,21 @@
+create role saleor with createdb superuser login password 'saleor';
+alter database saleor owner to saleor;
+
+ALTER USER restaurant WITH PASSWORD 'restaurant';
+
+create role restaurant with createdb superuser login password 'restaurant';
+alter database restaurant owner to restaurant;
+
+ALTER USER "restaurant" with superuser;
+
+
+create role property with createdb superuser login password 'property';
+alter database property owner to property;
+
+DROP DATABASE saleor;
+
+
+# connecting
+psql -h localhost -U saleor
+
+

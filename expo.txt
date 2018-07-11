@@ -1,0 +1,9 @@
+chmod a+x xde*.AppImage and ./xde*.AppImage
+
+# installation
+npm install exp --global
+
+# creating app
+exp init my-new-project
+cd my-new-project
+exp start

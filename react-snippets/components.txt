@@ -1,0 +1,385 @@
+React Components
+rcc
+
+import React, { Component } from 'react'
+
+export default class $1 extends Component {
+  render() {
+    return <div>$2</div>
+  }
+}
+
+rce
+
+import React, { Component } from 'react'
+
+export class $1 extends Component {
+  render() {
+    return <div>$2</div>
+  }
+}
+
+export default $1
+
+rcep
+
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+export class $1 extends Component {
+  static propTypes = {}
+
+  render() {
+    return <div>$2</div>
+  }
+}
+
+export default $1
+
+rpc
+
+import React, { PureComponent } from 'react'
+
+export default class $1 extends PureComponent {
+  render() {
+    return <div>$2</div>
+  }
+}
+
+rpcp
+
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+
+export default class $1 extends PureComponent {
+  static propTypes = {}
+
+  render() {
+    return <div>$2</div>
+  }
+}
+
+rccp
+
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+export default class $1 extends Component {
+  static propTypes = {
+    $2: $3,
+  }
+
+  render() {
+    return <div>$4</div>
+  }
+}
+
+rfe
+
+import React from 'react'
+
+const $1 = props => {
+  return <div>$0</div>
+}
+
+export default $1
+
+rfep
+
+import React from 'react'
+import PropTypes from 'prop-types'
+
+const $1 = props => {
+  return <div>$0</div>
+}
+
+$1.propTypes = {}
+
+export default $1
+
+rfc
+
+import React from 'react'
+
+export default () => {
+  return <div>$0</div>
+}
+
+rfcp
+
+import React from 'react'
+import PropTypes from 'prop-types'
+
+export default () => {
+  return <div>$0</div>
+}
+
+$1.propTypes = {}
+
+rcredux
+
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
+export class $1 extends Component {
+  static propTypes = {
+    $2: $3,
+  }
+
+  render() {
+    return <div>$4</div>
+  }
+}
+
+const mapStateToProps = state => ({})
+
+const mapDispatchToProps = {}
+
+export default connect(mapStateToProps, mapDispatchToProps)($1)
+
+reduxmap
+
+const mapStateToProps = state => ({})
+
+const mapDispatchToProps = {}
+
+React Native Components
+rnc
+
+import React, { Component } from 'react'
+import { Text, View } from 'react-native'
+
+export default class $1 extends Component {
+  render() {
+    return (
+      <View>
+        <Text> $2 </Text>
+      </View>
+    )
+  }
+}
+
+rnce
+
+import React, { Component } from 'react'
+import { Text, View } from 'react-native'
+
+export class $1 extends Component {
+  render() {
+    return (
+      <View>
+        <Text> $2 </Text>
+      </View>
+    )
+  }
+}
+
+export default $1
+
+rncredux
+
+import React, { Component } from 'react'
+import { View, Text } from 'react-native'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
+export class $1 extends Component {
+  static propTypes = {
+    $2: $3,
+  }
+
+  render() {
+    return (
+      <View>
+        <Text> $2 </Text>
+      </View>
+    )
+  }
+}
+
+const mapStateToProps = state => ({})
+
+const mapDispatchToProps = {}
+
+export default connect(mapStateToProps, mapDispatchToProps)($1)
+
+Others
+cmmb
+
+/**
+|--------------------------------------------------
+| $1
+|--------------------------------------------------
+*/
+
+desc
+
+describe('$1', () => {
+  $2
+})
+
+test
+
+test('should $1', () => {
+  $2
+})
+
+tit
+
+it('should $1', () => {
+  $2
+})
+
+stest
+
+import { ${1:ComponentName }, mapStateToProps, mapDispatchToProps } from '${2:path}/${1:ComponentName}'
+
+describe('<${1:ComponentName} />', () => {
+  const defaultProps = {
+
+  }
+
+  const setup = buildSetup(${1:ComponentName }, defaultProps)
+
+  test('render', () => {
+    expect(setup().wrapper).toMatchSnapshot()
+  })
+})
+
+sjtest
+
+import toJson from 'enzyme-to-json'
+import { ${1:ComponentName} }, mapStateToProps, mapDispatchToProps } from '${2:path}/${1:ComponentName}'
+
+describe('<${1:ComponentName} />', () => {
+  const defaultProps = {
+
+  }
+
+  const setup = buildSetup(${1:ComponentName }, defaultProps)
+
+  test('render', () => {
+    expect(toJson(setup().wrapper)).toMatchSnapshot()
+  })
+})
+
+sntest
+
+import 'react-native'
+import React from 'react'
+import renderer from 'react-test-renderer'
+
+import ${1:ComponentName} from '../${1:ComponentName}'
+
+describe('<${1:ComponentName} />', () => {
+  const defaultProps = {
+
+  }
+
+  const wrapper = renderer.create(<${1:ComponentName} {...defaultProps} />)
+
+  test('render', () => {
+    expect(wrapper).toMatchSnapshot()
+  })
+})
+
+snrtest
+
+import 'react-native'
+import React from 'react'
+import renderer from 'react-test-renderer'
+import { Provider } from 'react-redux'
+
+import store from 'src/store/configureStore'
+import ${1:ComponentName} from '../${1:ComponentName}'
+
+describe('<${1:ComponentName} />', () => {
+  const defaultProps = {
+
+  }
+
+  const wrapper = renderer.create(
+    <Provider store={store}>
+      <${1:ComponentName} {...defaultProps} />
+    </Provider>,
+  )
+
+  test('render', () => {
+    expect(wrapper).toMatchSnapshot()
+  })
+})
+
+hocredux
+
+import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
+export const mapStateToProps = state => ({
+
+})
+
+export const mapDispatchToProps = {
+
+}
+
+export const ${1:hocComponentName} = (WrappedComponent) => {
+  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />
+
+  hocComponent.propTypes = {
+  }
+
+  return hocComponent
+}
+
+export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent))
+
+hoc
+
+import React from 'react'
+import PropTypes from 'prop-types'
+
+export default WrappedComponent => {
+  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />
+
+  hocComponent.propTypes = {}
+
+  return hocComponent
+}
+
+	
+Categories
+Snippets
+Tags
+graphqljavascriptreactreact-nativereduxsnippetsnippets
+Resources
+
+    Repository
+    Changelog
+
+Project Details
+
+    dsznajder/vscode-es7-javascript-react-snippets
+    No Pull Requests
+    2 Open Issues
+    Last commit: 2 months ago
+
+More Info
+Version
+	
+1.3.3
+Last updated
+	
+2/1/2018, 5:44:53 PM
+Publisher
+	
+dsznajder
+Unique Identifier
+	
+dsznajder.es7-react-js-snippets
+Report
+	
+Report Abuse
+
+    Contact us 

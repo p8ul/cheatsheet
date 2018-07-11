@@ -1,0 +1,14 @@
+# inline function
+ this.year = (isNaN(year) || year == null) ? calCurrent.getFullYear() : year;
+
+# is equivalent to
+
+if(isNaN(year) || year == null){
+       this.year=calCurrent.getFullYear()
+ }
+ else{
+        this.year=year;
+ }
+
+# scroll top
+window.scrollTo(0, 0);

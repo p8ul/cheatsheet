@@ -1,0 +1,1 @@
+chmod +x graphiql-app-0.7.2-x86_64.AppImage

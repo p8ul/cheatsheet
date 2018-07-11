@@ -1,0 +1,41 @@
+# installation ubuntu 16.
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+
+echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
+sudo apt-get update
+
+sudo apt-get install -y mongodb-org
+
+# start
+sudo systemctl start mongod
+
+#mix
+sudo systemctl stop mongod, sudo systemctl start mongod
+
+# check status
+sudo systemctl status mongod
+
+# enable automatic starting 
+sudo systemctl enable mongod
+
+sudo rm /var/lib/mongodb/mongod.lock
+sudo mongod --dbpath /var/lib/mongodb/ --repair
+sudo mongod --dbpath /var/lib/mongodb/ --journal
+
+
+use shop
+db.createUser(
+  {
+    user: "user",
+    pwd: "password",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)
+
+DB_HOST=127.0.0.1 \
+DB_PORT=27017 \
+DB_NAME=shop \
+DB_USER=user \
+DB_PASS=password \
+npm start

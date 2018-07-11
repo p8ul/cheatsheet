@@ -1,0 +1,6 @@
+# ternary if statement
+#<expression1> if <condition> else <expression2>
+print('20') if a == 20 else ('10')
+
+b = 21
+a = 10 if b < 20 else 20 if b > 20 else 0
