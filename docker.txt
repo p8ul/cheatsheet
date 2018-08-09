@@ -1,1 +1,10 @@
-docker exec -ti f59e8ecaa7f2 /bin/bash
+docker exec -ti f2a0eb2f8774 /bin/bash
+
+# to remove all exited docker containers
+docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs sudo docker rm
+
+The best way to fix this is to apply the hstore extension on the default database, template1
+
+psql -d template1 -c 'create extension hstore;'
+psql -d template1 -c 'create extension hstore;' -U basecode
+

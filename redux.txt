@@ -1,0 +1,1 @@
+npm install --save redux react-redux redux-logger redux-promise redux-thunk

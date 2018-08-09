@@ -1,1 +1,35 @@
 npm i eslint -D
+
+npm install --save-dev eslint-config-standard eslint-plugin-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node
+
+# react native
+npm install --save-dev babel-eslint eslint-config-airbnb-base eslint-plugin-react eslint-plugin-react-native
+
+# disable lint
+/* eslint react/display-name: 0 */
+
+# lint fix script
+"lintfix": "eslint ./src --fix --ext .js"
+
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "react-native"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+        "jsx": true,
+        "modules": true
+    }
+  },
+  "extends" : [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb-base"
+  ],
+  "rules" : {
+    "arrow-body-style" : "warn",
+    "class-methods-use-this": 0
+  }
+}

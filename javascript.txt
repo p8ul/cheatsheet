@@ -12,3 +12,25 @@ if(isNaN(year) || year == null){
 
 # scroll top
 window.scrollTo(0, 0);
+
+
+# javascript functions
+# Find()
+The find() method returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.
+**************************************************
+var array1 = [5, 12, 8, 130, 44];
+
+var found = array1.find(function(element) {
+  return element > 10;
+});
+
+**************************************************
+
+# Filter
+The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+someArray = [{name:"Kristian", lines:"2,5,10"},
+             {name:"John", lines:"1,19,26,96"},
+             {name:"Brian",lines:"3,9,62,36" }];
+johnRemoved = someArray.filter(function(el) {
+    return el.name !== "John";
+});

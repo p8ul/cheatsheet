@@ -4,3 +4,8 @@ print('20') if a == 20 else ('10')
 
 b = 21
 a = 10 if b < 20 else 20 if b > 20 else 0
+
+# find in a list
+i = [1,2,3,4]
+
+a = filter(lambda found: found==1,i)
