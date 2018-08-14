@@ -1,4 +1,4 @@
-Value 	Description 	Reference
+```Value 	Description 	Reference
 100 	Continue 	[RFC7231, Section 6.2.1]
 101 	Switching Protocols 	[RFC7231, Section 6.2.2]
 102 	Processing 	[RFC2518]
@@ -71,4 +71,4 @@ Value 	Description 	Reference
 509 	Unassigned 	
 510 	Not Extended 	[RFC2774]
 511 	Network Authentication Required 	[RFC6585]
-512-599 	Unassigned
+512-599 	Unassigned```
