@@ -1,4 +1,5 @@
-```Value 	Description 	Reference
+```
+|Value	|Description 	|Reference
 100 	Continue 	[RFC7231, Section 6.2.1]
 101 	Switching Protocols 	[RFC7231, Section 6.2.2]
 102 	Processing 	[RFC2518]
