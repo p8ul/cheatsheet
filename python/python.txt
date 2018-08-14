@@ -9,3 +9,11 @@ a = 10 if b < 20 else 20 if b > 20 else 0
 i = [1,2,3,4]
 
 a = filter(lambda found: found==1,i)
+
+# search python 2
+ f = [i for i in filter(lambda found: found['name'] == name, items)]
+# remove duplicates
+[items.remove(i) for i in filter(lambda found: found['name'] == name, items)]
+
+# search python 3
+item_ = next((item for item in self.data if item.get('id') == int(instance_id)), {})

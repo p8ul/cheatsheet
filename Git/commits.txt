@@ -1,0 +1,46 @@
+what my commits looked like.
+
+    Create HTML for form
+
+    Style form
+
+    Add HTML5 validation
+
+    Fix unrelated JS bug
+
+    Add ajax submit to form with mock server results from PHP
+
+    Add JS validation to form
+
+    Send form results via email
+
+    Log form results to database
+
+    Style form validation and success/error messages
+
+
+
+
+What does this PR do?
+======================
+- Creates ask a Question page
+
+Description of Task to be completed?
+===============================
+- Activate ask question link on sidebar menu
+- Add ask a question form
+- Style question form
+
+How should this be manually tested?
+=============================
+- Clone repository 
+      git clone https://github.com/p8ul/stackoverflow-lite
+- Navigate to UI folder
+- Open the ask.html file in your browser.
+
+What are the relevant pivotal tracker stories?
+===============================
+
+Screenshots (if appropriate)
+=========================
+
