@@ -9,13 +9,22 @@ alter database restaurant owner to restaurant;
 ALTER USER "restaurant" with superuser;
 
 
-create role property with createdb superuser login password 'property';
-alter database property owner to property;
+create role stack with createdb superuser login password 'stack';
+alter database stack owner to stack;
 
+# delete database
 DROP DATABASE saleor;
+
+# delete table
+DROP <table-name>
 
 
 # connecting
 psql -h localhost -U saleor
 
+# list table columns
+\d+  <table-name>
+
+# connect to database
+\c <database-name>
 
